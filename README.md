@@ -10,11 +10,11 @@ Let us first see the ER Diagram for this System Design.
   
   For every row,
     
-    There will be unique customerID (PRIMARY KEY)
+    There will be unique customerID (PRIMARY KEY, INDEXED)
     
     Address of the customer (Can be further linked with some weak attributes like Locality, City, State etc.)
     
-    Contact Number of the customer (PRIMARY KEY)
+    Contact Number of the customer (PRIMARY KEY, INDEXED)
 
 2. Order Table - 
 
@@ -22,7 +22,7 @@ Let us first see the ER Diagram for this System Design.
   
   For every row, 
   
-    There will be a unique Order ID (PRIMARY KEY)
+    There will be a unique Order ID (PRIMARY KEY, INDEXED)
     
     A mapped customer ID, to represent the owner of the order.
     
@@ -39,7 +39,7 @@ Let us first see the ER Diagram for this System Design.
   This will hold all the past orders made by a customer
   For every row,
   
-    There will be a mapped Order ID from Order Table (PRIMARY KEY)
+    There will be a mapped Order ID from Order Table (PRIMARY KEY, INDEXED)
     
     A mapped customer ID, to represent the owner of the order.
     
@@ -50,7 +50,7 @@ Let us first see the ER Diagram for this System Design.
   This will hold mapping of quantity of every item in an order with recipie instructions.
   For every row,
   
-    There will be ItemQtyMappingID mapped with OrderID from Orders Table (PRIMARY KEY)
+    There will be ItemQtyMappingID mapped with OrderID from Orders Table (PRIMARY KEY, INDEXED)
     
     Item will be Food Item under a particular order (PRIMARY KEY)
     
@@ -65,7 +65,7 @@ Let us first see the ER Diagram for this System Design.
   
     There will be customer ID mapped from Customer Table
     
-    OrderID of the order which is subscribed, mapped from Orders Table (PRIMARY KEY)
+    OrderID of the order which is subscribed, mapped from Orders Table (PRIMARY KEY, INDEXED)
     
     Date of delivering the order.
     
