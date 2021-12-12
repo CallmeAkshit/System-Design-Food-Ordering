@@ -5,7 +5,9 @@ Let us first see the ER Diagram for this System Design.
 ![DBMS ER diagram (UML notation)](https://user-images.githubusercontent.com/29516560/145729154-72d8b2e3-486b-4580-867d-85679492134f.png)
 
 1. Customer Table - 
+  
   This will hold all the customer personal information which would be required to identify the owner of the order
+  
   For every row,
     
     There will be unique customerID (PRIMARY KEY)
@@ -118,13 +120,14 @@ Let us first see the ER Diagram for this System Design.
       
  15. Update a One Time Order
       
-      SELECT Order ID for the particular customer ID which is to be updated.
-      UPDATE order details in Orders table using above Order ID.
+          SELECT Order ID for the particular customer ID which is to be updated.
+          UPDATE order details in Orders table using above Order ID.
       
  17. Update a reccuring Subscribed Order
-      SELECT Order ID for the particular customer ID which is to be updated.
-      UPDATE order details in Orders table using above Order ID.
-      UPDATE order details in Reccuring Orders table using above Order ID. (Only if Date of Delivery is changed or reccuring frequency is changed)
+      
+          SELECT Order ID for the particular customer ID which is to be updated.
+          UPDATE order details in Orders table using above Order ID.
+          UPDATE order details in Reccuring Orders table using above Order ID. (Only if Date of Delivery is changed or reccuring frequency is changed)
   
   
   
