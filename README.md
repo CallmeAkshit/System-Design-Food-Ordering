@@ -4,14 +4,14 @@ Let us first see the ER Diagram for this System Design.
 
 ![DBMS ER diagram (UML notation)](https://user-images.githubusercontent.com/29516560/145729154-72d8b2e3-486b-4580-867d-85679492134f.png)
 
-Customer Table - 
+1. Customer Table - 
   This will hold all the customer personal information which would be required to identify the owner of the order
   For every row,
     There will be unique customerID (PRIMARY KEY)
     Address of the customer (Can be further linked with some weak attributes like Locality, City, State etc.)
     Contact Number of the customer (PRIMARY KEY)
 
-Order Table - 
+2. Order Table - 
   This will hold all the future orders associated with a particular Customer (using CustomerID)
   For every row, 
     There will be a unique Order ID (PRIMARY KEY)
@@ -21,14 +21,14 @@ Order Table -
     Subscribed will tell whether the particular order is subscribed for future.'
     ReccuringFrequency will tell the frequency at which the order has to be repeated if subscribed. (In Days)
     
- ORDER HISTORY TABLE - 
+ 3. ORDER HISTORY TABLE - 
   This will hold all the past orders made by a customer
   For every row,
     There will be a mapped Order ID from Order Table (PRIMARY KEY)
     A mapped customer ID, to represent the owner of the order.
     TimeOfDelivery will tell the date and time at which order was delivered. (PRIMARY KEY)
     
-ITEM QTY MAPPING TABLE  -
+4. ITEM QTY MAPPING TABLE  -
   This will hold mapping of quantity of every item in an order with recipie instructions.
   For every row,
     There will be ItemQtyMappingID mapped with OrderID from Orders Table (PRIMARY KEY)
@@ -36,14 +36,14 @@ ITEM QTY MAPPING TABLE  -
     Quantity of the item
     Recipe Instructions related to preparation of that item. 
     
-RECCURING ORDERS TABLE
+5. RECCURING ORDERS TABLE
   This will store all the orders which are subscribed by different customers.
   For every row,
     There will be customer ID mapped from Customer Table
     OrderID of the order which is subscribed, mapped from Orders Table (PRIMARY KEY)
     Date of delivering the order.
     
- ##CRUD Operations
+ ## CRUD Operations
  
  1. Create New Non reccuring Order with existing customer
     
